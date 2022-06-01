@@ -7,17 +7,21 @@ class GuessingGame:
 
     def guess(self, user_guess):
         if user_guess > self.answer:
-            print("high")
+            print("High")
+            self.solved()
         elif user_guess < self.answer:
-            print("low")
+            print("Low")
+            self.solved()
         else: 
             user_guess == self.answer
-            print('Perfect')
+            print('Correct')
             self.correct = True
+            self.solved()
         
     def solved(self):
         print(self.correct)
+    
 
-x = GuessingGame(5)
-x.guess(2)
+first_game = GuessingGame(5)
+first_game.guess(4)
 
